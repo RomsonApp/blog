@@ -1,0 +1,10 @@
+{
+  "autoload": {
+    "classmap": [
+      "application/Application.php",
+      "application/classes",
+      "application/controllers",
+      "application/models"
+    ]
+  }
+}
