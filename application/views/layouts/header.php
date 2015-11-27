@@ -3,4 +3,4 @@
         <title>Blog</title>
         <?= Assets::css('blog.css'); ?>
     </head>
-</html>
+    <body>

@@ -15,5 +15,6 @@ return array(
     'Model' => $baseDir . '/application/classes/Model.php',
     'Post' => $baseDir . '/application/models/Post.php',
     'Route' => $baseDir . '/application/classes/Route.php',
+    'SqlBuilder' => $baseDir . '/application/classes/SqlBuilder.php',
     'View' => $baseDir . '/application/classes/View.php',
 );

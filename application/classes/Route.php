@@ -5,13 +5,20 @@ class Route{
     private $action;
 
     public function get($__get){
-        if(!isset($__get['page']))
+        if(!isset($__get['page'])) {
             $this->controller = Application::getParam('defaultController') . "Controller";
-        if(!isset($__get['action']))
+        }else{
+            $this->controller = $__get['page'] . "Controller";
+        }
+        if(!isset($__get['action'])){
             $this->action = 'index';
+        }else{
+            $this->action = $__get['action'];
+        }
         $class = ucfirst($this->controller);
 
         $file = __DIR__ . "/../controllers/" . $class . ".php";
+
         if(file_exists($file)){
             require_once $file;
             $controller = new $class();

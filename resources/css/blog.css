@@ -1,8 +1,79 @@
-.post{
-    border: 1px solid black;
-    width: 400px;
+*{
+    margin: 0 auto;
+}
+.post-block{
+    width: 50%;
 }
 
-.right{
+.post{
+    width: 100%;
+
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+
+.post .title-block{
+    background-color: azure;
+    border-bottom: 1px solid crimson;
+    float: left;
+    width: 100%;
+}
+
+.post .title-block .title{
+    margin-left: 15px;
+    margin-right: 25px;
+    float: left;
+}
+
+.post .title-block .status{
+    margin-left: 15px;
+    float: left;
+}
+
+.post .title-block .buttons{
+    margin-right: 15px;
+    float: right;
+}
+
+.post .title-block .buttons .btn{
+    margin: 5px;
+    text-decoration: none;
+}
+
+.post .title-block .buttons .btn:hover{
+    color: green;
+}
+
+.post-block .content-block{
+    background-color: lightblue;
+    padding: 25px;
+}
+
+.post-block .content-block .content{
+
+}
+
+.post-block .tags{
+    background-color: aliceblue;
+    border: 1px dotted rebeccapurple;
+}
+
+.post-form{
+    width: 35%;
+}
+
+.post-form .post-title-block .post-title{
+    width: 100%;
+}
+
+.post-form .post-content-block .post-content{
+    width: 100%;
+}
+.post-form .post-tags-block .post-tags{
+    width: 100%;
+}
+
+.post-form .post-submit-block .post-submit{
+    margin-top: 10px;
     float: right;
 }

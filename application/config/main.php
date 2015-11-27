@@ -1,4 +1,6 @@
 <?php
 return array(
-    'defaultController' => "default",
+    'rootDir' => __DIR__ . "/../../",
+    'basePath' => 'blog',
+    'defaultController' => "post",
 );

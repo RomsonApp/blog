@@ -26,11 +26,12 @@ class Application
         return $this->route;
     }
 
-    public function redirect(Array $route){
-        echo '<pre>';
-        print_r($route);
-        echo '</pre>';
-        die();
+    public static function redirect(Array $route){
+        header("Location: " . self::createUrl($route));
+    }
+    
+    public static function createUrl(Array $url){
+        return "/" . self::getParam('basePath') . "/index.php?page=" . key($url) . "&action=" . current($url);
     }
 
 }
