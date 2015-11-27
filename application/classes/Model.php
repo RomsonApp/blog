@@ -6,6 +6,10 @@ class Model extends Database{
         return parent::__construct();
     }
 
+    public function save(){
+
+    }
+
     public static function model(){
         return new Model();
     }
