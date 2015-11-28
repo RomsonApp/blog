@@ -1,1 +1,1 @@
-<?php $this->renderPartial('post/__form'); ?>
+<?php $this->renderPartial('post/__form', array('post' => $post)); ?>

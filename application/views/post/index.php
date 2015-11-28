@@ -16,25 +16,23 @@
         <?php foreach ($posts as $post): ?>
             <div class="post">
                 <div class="title-block">
-                    <div class="title"><?= $post->title ?></div>
+                    <div class="title"><a
+                            href="<?= Application::createUrl(array('post' => 'show'), array('id' => $post->id)) ?>"> <?= $post->title ?></a>
+                    </div>
                     <div class="status">
-                        status: <?= $post->status ?>
+                        status: <?= $post->status_name ?>
                     </div>
                     <div class="buttons">
-                        <a class="btn" href="#">Edit</a>
-                        <a class="btn" href="#">Delete</a>
+                        <a class="btn" href="<?= Application::createUrl(array('post' => 'edit'), array('id' => $post->id)) ?>">Edit</a>
+                        <a class="btn" href="<?= Application::createUrl(array('post' => 'delete'), array('id' => $post->id)) ?>">Delete</a>
                     </div>
                 </div>
                 <div class="content-block">
-                    <div class="image">
 
-                    </div>
                     <div class="content">
+                        <img src="/uploads/post/<?= $post->image ?>"/>
                         <?= $post->content ?>
                     </div>
-                </div>
-                <div class="tags">
-                    <?= $post->tags ?>
                 </div>
             </div>
         <?php endforeach; ?>

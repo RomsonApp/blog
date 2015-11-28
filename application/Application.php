@@ -26,12 +26,18 @@ class Application
         return $this->route;
     }
 
-    public static function redirect(Array $route){
-        header("Location: " . self::createUrl($route));
+    public static function redirect(Array $route, Array $argv = array()){
+        header("Location: " . self::createUrl($route, $argv));
     }
     
-    public static function createUrl(Array $url){
-        return "/" . self::getParam('basePath') . "/index.php?page=" . key($url) . "&action=" . current($url);
+    public static function createUrl(Array $url, Array $argv = array()){
+        $params = '';
+        if(!empty($argv)){
+            foreach($argv as $k => $v){
+                $params .= "&{$k}={$v}";
+            }
+        }
+        return 'http://' . self::getParam('server') . self::getParam('basePath') . "index.php?page=" . key($url) . "&action=" . current($url) . $params;
     }
 
 }

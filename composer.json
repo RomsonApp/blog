@@ -4,7 +4,8 @@
       "application/Application.php",
       "application/classes",
       "application/controllers",
-      "application/models"
+      "application/models",
+      "application/helpers"
     ]
   }
 }

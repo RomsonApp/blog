@@ -53,6 +53,14 @@
 
 }
 
+img{
+    display: inline;
+    margin-right: 15px;
+    width: 15%;
+}
+
+
+
 .post-block .tags{
     background-color: aliceblue;
     border: 1px dotted rebeccapurple;
@@ -75,5 +83,29 @@
 
 .post-form .post-submit-block .post-submit{
     margin-top: 10px;
+    float: right;
+}
+
+.comment-add-block{
+    width: 50%;
+
+}
+.comment-block{
+    width: 50%;
+
+}
+
+.comment-add-block .comment-email input{
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.comment-add-block textarea{
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.comment-add-block .comment-submit input{
     float: right;
 }

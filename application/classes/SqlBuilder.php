@@ -1,11 +1,15 @@
 <?php
 
-class SqlBuilder extends Database{
+class SqlBuilder extends Database
+{
     private $select = "SELECT *";
     private $from;
     private $table;
     private $where;
     private $relation = '';
+    private $order = '';
+    private $limit = '';
+    private $fetchAll = true;
     private $query;
 
     public function __construct()
@@ -38,17 +42,41 @@ class SqlBuilder extends Database{
 
     public function with(Array $relation)
     {
+        $rel = current($relation);
+        $table = key($relation);
+        $name = $rel[0];
+        $field = $rel[1];
+        $index = $rel[2];
 
-        $this->relation .= ", (SELECT " . current($relation) . " FROM " . key($relation) . " WHERE id = {$this->table}.id) as " . key($relation);
+        $this->relation .= ", (SELECT {$field} FROM {$table} WHERE {$index} = {$this->table}.id) as {$name}";
+        return $this;
+    }
+
+    public function orderBy($orderBy)
+    {
+        $this->order = " ORDER BY {$this->table}.id $orderBy";
+        return $this;
+    }
+
+    public function limit($limit)
+    {
+        if($limit == 1){
+            $this->fetchAll = false;
+        }
+        $this->limit = " LIMIT $limit";
         return $this;
     }
 
 
     public function query()
     {
-        $this->query = $this->select . $this->relation . $this->from . $this->where;
+        $this->query = $this->select . $this->relation . $this->from . $this->where . $this->order . $this->limit;
+        if ($this->fetchAll) {
+            return $this->getConnection()->query($this->query)->fetchAll(PDO::FETCH_OBJ);
+        } else {
+            return $this->getConnection()->query($this->query)->fetch(PDO::FETCH_OBJ);
 
-        return $this->getConnection()->query($this->query)->fetchAll(PDO::FETCH_OBJ);
+        }
 
 
     }
