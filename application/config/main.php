@@ -10,10 +10,10 @@ return array(
      * Database configuration
      */
     'database' => array(
-        'host' => '',
-        'dbname' => '',
-        'user' => '',
-        'password' => ''
+        'host' => 'localhost',
+        'dbname' => 'blog-test',
+        'user' => 'root',
+        'password' => 'root'
     ),
 
     'uploadPath' => ROOT_DIR . "uploads",
