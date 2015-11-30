@@ -5,7 +5,7 @@
  */
 
 ?>
-
+<div style="text-align: center"> <a href="<?= Application::createUrl(array('post' => 'index')) ?>">Go to main page</a></div>
 <div class="post-block">
     <div class="post">
         <div class="title-block">

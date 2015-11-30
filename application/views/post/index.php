@@ -4,7 +4,7 @@
  */
 
 ?>
-<h1>Blog</h1>
+<h1 style="text-align: center">Blog</h1>
 
 <div class="post-block">
     <div class="post-add">
