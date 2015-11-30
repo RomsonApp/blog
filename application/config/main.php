@@ -3,7 +3,7 @@ define('ROOT_DIR', __DIR__ . "/../../");
 return array(
     'rootDir' => ROOT_DIR,
     'server' => $_SERVER['SERVER_NAME'],
-    'basePath' => '/', // '/' - example.com, '/blog/' - example.com/blog
+    'basePath' => '/blog/', // '/' - example.com, '/blog/' - example.com/blog
     'defaultController' => "post",
 
     /*

@@ -6,7 +6,7 @@ class PostController extends Controller
     {
         $builder = new SqlBuilder();
         $posts = $builder->from('post')
-            ->with(array('status' => array('status_name', 'label', 'id')))
+            ->with(array('status' => array('status_name', 'label', 'id', 'status')))
             ->orderBy('DESC')
             ->query();
 
@@ -18,7 +18,7 @@ class PostController extends Controller
     {
         $postBuilder = new SqlBuilder();
         $post = $postBuilder->from('post')
-            ->with(array('status' => array('status_name', 'label', 'id')))
+            ->with(array('status' => array('status_name', 'label', 'id', 'status')))
             ->where(array('id = ' . $_GET['id']))
             ->limit(1)
             ->query();
@@ -73,7 +73,7 @@ class PostController extends Controller
     {
         $postBuilder = new SqlBuilder();
         $post = $postBuilder->from('post')
-            ->with(array('status' => array('status_name', 'label', 'id')))
+            ->with(array('status' => array('status_name', 'label', 'id', 'status')))
             ->where(array('id = ' . $_GET['id']))
             ->limit(1)
             ->query();

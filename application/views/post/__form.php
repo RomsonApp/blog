@@ -11,7 +11,7 @@
 
         <div class="post-file-block">
             <?php if(!empty($post->image)): ?>
-                <div><img src="/uploads/post/<?= $post->image ?>" /></div>
+                <div><img src="<?= Application::getParam('basePath') ?>uploads/post/<?= $post->image ?>" /></div>
                 <br/>
             <?php endif ?>
             <input id="image" name="Post[image]" type="file"/>

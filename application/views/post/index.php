@@ -30,7 +30,7 @@
                 <div class="content-block">
 
                     <div class="content">
-                        <img src="/uploads/post/<?= $post->image ?>"/>
+                        <img src="<?= Application::getParam('basePath') ?>uploads/post/<?= $post->image ?>"/>
                         <?= $post->content ?>
                     </div>
                 </div>

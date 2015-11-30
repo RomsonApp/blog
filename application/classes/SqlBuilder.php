@@ -47,8 +47,9 @@ class SqlBuilder extends Database
         $name = $rel[0];
         $field = $rel[1];
         $index = $rel[2];
+        $from_index = $rel[3];
 
-        $this->relation .= ", (SELECT {$field} FROM {$table} WHERE {$index} = {$this->table}.id) as {$name}";
+        $this->relation .= ", (SELECT {$field} FROM {$table} WHERE {$index} = {$this->table}.{$from_index}) as {$name}";
         return $this;
     }
 
